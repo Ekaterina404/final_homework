@@ -5,7 +5,9 @@ from code.db_handler import save_download, init_db
 
 
 class MainWindow(QMainWindow):
+    """Главное окно приложения для загрузки видео."""
     def __init__(self):
+        """Инициализирует главное окно и компоненты интерфейса."""
         super(MainWindow, self).__init__()
         loadUi("UI/main_window.ui", self)
         init_db()
@@ -16,12 +18,16 @@ class MainWindow(QMainWindow):
         self.savePath = ""
 
     def select_save_path(self):
-        path = QFileDialog.getExistingDirectory(self, "Select Save Directory")
+        """Открывает окно для выбора каталога для
+         сохранения загруженных файлов."""
+        path = QFileDialog.getExistingDirectory(self, "Выберите Каталог"
+                                                      " для сохранения")
         if path:
             self.savePath = path
             self.pathLabel.setText(path)
 
     def load_formats(self):
+        """Загружает доступные форматы для указанного URL-адреса видео."""
         url = self.urlInput.text().strip()
         if url:
             try:
@@ -36,6 +42,7 @@ class MainWindow(QMainWindow):
                                      f"Failed to load formats: {e}")
 
     def start_download(self):
+        """Запускает процесс загрузки выбранного видео и формата."""
         url = self.urlInput.text().strip()
         if not url or not self.savePath:
             QMessageBox.warning(
