@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>YouTube Downloader</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLineEdit" name="urlInput">
+      <property name="placeholderText">
+       <string>Enter YouTube URL here...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="formatSelector">
+      <property name="currentText">
+       <string>Select format...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="selectPathButton">
+      <property name="text">
+       <string>Select Save Path</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="pathLabel">
+      <property name="text">
+       <string>No path selected</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="downloadButton">
+      <property name="text">
+       <string>Download</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
