@@ -22,7 +22,8 @@ def save_download(url, title, file_path, file_type):
     conn = sqlite3.connect("downloads.db")
     cursor = conn.cursor()
     cursor.execute(
-        'INSERT INTO downloads (url, title, file_path, file_type) VALUES (?, ?, ?, ?)',
+        'INSERT INTO downloads (url, title, file_path, file_type)'
+        ' VALUES (?, ?, ?, ?)',
         (url, title, file_path, file_type)
     )
     conn.commit()
